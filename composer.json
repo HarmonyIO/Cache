@@ -1,0 +1,40 @@
+{
+    "name": "harmonyio/cache",
+    "description": "Asynchronous caching library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pieter Hordijk",
+            "email": "info@pieterhordijk.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.2",
+        "amphp/amp": "^2.0",
+        "amphp/redis": "^0.3.3"
+    },
+    "require-dev": {
+        "harmonyio/php-codesniffer-ruleset": "dev-master",
+        "harmonyio/phpunit-extension": "^0.1",
+        "maglnet/composer-require-checker": "^1.1",
+        "phpunit/phpunit": "^7.4",
+        "slevomat/coding-standard": "^4.8",
+        "squizlabs/php_codesniffer": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "HarmonyIO\\Cache\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HarmonyIO\\CacheTest\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
