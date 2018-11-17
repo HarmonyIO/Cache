@@ -2,7 +2,7 @@
 
 namespace HarmonyIO\Cache;
 
-interface Cacheable
+interface CacheableRequest
 {
     public function getCachingKey(): Key;
 }
