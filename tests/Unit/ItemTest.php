@@ -19,13 +19,7 @@ class ItemTest extends TestCase
     {
         $this->key = $this->createMock(Key::class);
 
-        $this->item = new class($this->key) extends Item
-        {
-            public function __construct(Key $key)
-            {
-                parent::__construct($key, 'TheValue', 10);
-            }
-        };
+        $this->item = new Item($this->key, 'TheValue', 10);
     }
 
     public function testGetKey(): void
@@ -45,13 +39,7 @@ class ItemTest extends TestCase
 
     public function testGetDefaultTtl(): void
     {
-        $item = new class($this->key) extends Item
-        {
-            public function __construct(Key $key)
-            {
-                parent::__construct($key, 'TheValue');
-            }
-        };
+        $item = new Item($this->key, 'TheValue');
 
         $this->assertSame(0, $item->getTtl());
     }

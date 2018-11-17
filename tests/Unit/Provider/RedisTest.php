@@ -78,13 +78,7 @@ class RedisTest extends TestCase
 
     public function testStore(): void
     {
-        $item = new class($this->key) extends Item
-        {
-            public function __construct(Key $key)
-            {
-                parent::__construct($key, 'TheValue', 10);
-            }
-        };
+        $item = new Item($this->key, 'TheValue', 10);
 
         $this->client
             ->expects($this->once())
