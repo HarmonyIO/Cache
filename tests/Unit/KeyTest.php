@@ -31,7 +31,7 @@ class KeyTest extends TestCase
         );
     }
 
-    public function test__toString(): void
+    public function testToString(): void
     {
         $this->assertSame(
             'HarmonyIO_HttpRequest_Validation::NotPwnedPassword_TheHash',

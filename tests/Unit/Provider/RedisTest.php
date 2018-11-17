@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace HarmonyIO\CacheTest\Provider;
+namespace HarmonyIO\CacheTest\Unit\Provider;
 
 use Amp\Redis\Client;
 use Amp\Success;
@@ -18,7 +18,7 @@ class RedisTest extends TestCase
     /** @var Key */
     private $key;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->client = $this->createMock(Client::class);
         $this->key    = $key = new Key('TheType', 'TheSource', 'TheHash');
@@ -29,7 +29,7 @@ class RedisTest extends TestCase
         $this->client
             ->expects($this->once())
             ->method('get')
-            ->willReturnCallback(function(string $key) {
+            ->willReturnCallback(function (string $key) {
                 $this->assertSame('HarmonyIO_TheType_TheSource_TheHash', $key);
 
                 return new Success(true);
@@ -66,7 +66,7 @@ class RedisTest extends TestCase
         $this->client
             ->expects($this->once())
             ->method('del')
-            ->willReturnCallback(function(string $key) {
+            ->willReturnCallback(function (string $key) {
                 $this->assertSame('HarmonyIO_TheType_TheSource_TheHash', $key);
 
                 return new Success(true);
@@ -89,7 +89,7 @@ class RedisTest extends TestCase
         $this->client
             ->expects($this->once())
             ->method('set')
-            ->willReturnCallback(function(string $key, string $value, int $ttl) {
+            ->willReturnCallback(function (string $key, string $value, int $ttl) {
                 $this->assertSame('HarmonyIO_TheType_TheSource_TheHash', $key);
                 $this->assertSame('TheValue', $value);
                 $this->assertSame(10, $ttl);

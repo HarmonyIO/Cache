@@ -15,7 +15,7 @@ class ItemTest extends TestCase
     /** @var MockObject|Key */
     private $key;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->key = $this->createMock(Key::class);
 
