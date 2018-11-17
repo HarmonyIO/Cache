@@ -2,7 +2,6 @@
 
 namespace HarmonyIO\Cache;
 
-interface CacheableResponse
+interface CacheableResponse extends \Serializable
 {
-    public static function initializeFromCache(string $cachedData);
 }
