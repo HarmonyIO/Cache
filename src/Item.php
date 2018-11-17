@@ -2,7 +2,7 @@
 
 namespace HarmonyIO\Cache;
 
-abstract class Item
+class Item
 {
     /** @var Key */
     private $key;
