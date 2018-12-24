@@ -10,14 +10,18 @@ class Item
     /** @var string */
     private $value;
 
-    /** @var int */
-    private $ttlInSeconds;
+    /** @var Ttl */
+    private $ttl;
 
-    public function __construct(Key $key, string $value, int $ttlInSeconds = 0)
+    public function __construct(Key $key, string $value, ?Ttl $ttl = null)
     {
-        $this->key          = $key;
-        $this->value        = $value;
-        $this->ttlInSeconds = $ttlInSeconds;
+        if ($ttl === null) {
+            $ttl = new Ttl(0);
+        }
+
+        $this->key   = $key;
+        $this->value = $value;
+        $this->ttl   = $ttl;
     }
 
     public function getKey(): Key
@@ -30,8 +34,8 @@ class Item
         return $this->value;
     }
 
-    public function getTtl(): int
+    public function getTtl(): Ttl
     {
-        return $this->ttlInSeconds;
+        return $this->ttl;
     }
 }

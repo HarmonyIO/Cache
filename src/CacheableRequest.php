@@ -6,5 +6,5 @@ interface CacheableRequest
 {
     public function getCachingKey(): Key;
 
-    public function getTtl(): int;
+    public function getTtl(): Ttl;
 }

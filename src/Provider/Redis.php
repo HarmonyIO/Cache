@@ -35,6 +35,6 @@ class Redis implements Cache
 
     public function store(Item $item): Promise
     {
-        return $this->client->set((string) $item->getKey(), $item->getValue(), $item->getTtl());
+        return $this->client->set((string) $item->getKey(), $item->getValue(), $item->getTtl()->getTtlInSeconds());
     }
 }
