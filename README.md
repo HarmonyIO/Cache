@@ -7,3 +7,22 @@
 [![License](https://poser.pugx.org/harmonyio/cache/license)](https://packagist.org/packages/harmonyio/cache)
 
 Async caching library
+
+## Requirements
+
+- PHP 7.3
+- Redis
+
+In addition for non-blocking context one of the following event libraries should be installed:
+
+- [ev](https://pecl.php.net/package/ev)
+- [event](https://pecl.php.net/package/event)
+- [php-uv](https://github.com/bwoebi/php-uv)
+
+## Installation
+
+```
+composer require harmonyio/cache
+```
+
+## Usage
