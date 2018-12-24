@@ -14,15 +14,6 @@ matrix:
       php: '7.3'
       env: require=1 dependencies=highest
 
-    - name: '[CS] PHP 7.2 With Locked Dependencies'
-      php: '7.2'
-      env: cs=1
-    - name: '[CS] PHP 7.2 With Lowest Dependencies'
-      php: '7.2'
-      env: cs=1 dependencies=lowest
-    - name: '[CS] PHP 7.2 With Highest Dependencies'
-      php: '7.2'
-      env: cs=1 dependencies=highest
     - name: '[CS] PHP 7.3 With Locked Dependencies'
       php: '7.3'
       env: cs=1
@@ -38,34 +29,28 @@ matrix:
     - name: '[CS] PHP Nightly With Lowest Dependencies'
       php: nightly
       env: cs=1 dependencies=lowest
-    - name: '[CS] PHP Nightly With HIghest Dependencies'
+    - name: '[CS] PHP Nightly With Highest Dependencies'
       php: nightly
       env: cs=1 dependencies=highest
 
-    - name: '[UNIT] PHP 7.2 With Locked Dependencies'
-      php: '7.2'
-    - name: '[UNIT] PHP 7.2 With Lowest Dependencies'
-      php: '7.2'
-      env: dependencies=lowest
-    - name: '[UNIT] PHP 7.2 With Highest Dependencies'
-      php: '7.2'
-      env: dependencies=highest
     - name: '[UNIT] PHP 7.3 With Locked Dependencies'
       php: '7.3'
+      env: unit=1
     - name: '[UNIT] PHP 7.3 With Lowest Dependencies'
       php: '7.3'
-      env: dependencies=lowest
+      env: dependencies=lowest unit=1
     - name: '[UNIT] PHP 7.3 With Highest Dependencies'
       php: '7.3'
-      env: dependencies=highest
+      env: dependencies=highest unit=1
     - name: '[UNIT] PHP Nightly With Locked Dependencies'
       php: nightly
+      env: unit=1
     - name: '[UNIT] PHP Nightly With Highest Dependencies'
       php: nightly
-      env: dependencies=lowest
+      env: dependencies=highest unit=1
     - name: '[UNIT] PHP Nightly With Lowest Dependencies'
       php: nightly
-      env: dependencies=highest
+      env: dependencies=lowest unit=1
   allow_failures:
     - name: '[CS] PHP Nightly With Locked Dependencies'
       php: nightly
@@ -73,36 +58,37 @@ matrix:
     - name: '[CS] PHP Nightly With Lowest Dependencies'
       php: nightly
       env: cs=1 dependencies=lowest
-    - name: '[CS] PHP Nightly With HIghest Dependencies'
+    - name: '[CS] PHP Nightly With Highest Dependencies'
       php: nightly
       env: cs=1 dependencies=highest
 
     - name: '[UNIT] PHP Nightly With Locked Dependencies'
       php: nightly
+      env: unit=1
     - name: '[UNIT] PHP Nightly With Highest Dependencies'
       php: nightly
-      env: dependencies=lowest
+      env: dependencies=highest unit=1
     - name: '[UNIT] PHP Nightly With Lowest Dependencies'
       php: nightly
-      env: dependencies=highest
+      env: dependencies=lowest unit=1
 
 before_install:
-- phpenv config-rm xdebug.ini || echo "No xdebug config."
-- composer self-update
+  - phpenv config-rm xdebug.ini || echo "No xdebug config."
+  - composer self-update
 
 install:
-- wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar
-- chmod +x php-coveralls.phar
+  - wget https://github.com/php-coveralls/php-coveralls/releases/download/v2.0.0/php-coveralls.phar
+  - chmod +x php-coveralls.phar
 
 before_script:
-  - if [ -z "$dependencies" ]; then travis_retry composer install --no-scripts; fi;
-  - if [ "$dependencies" = "lowest" ]; then travis_retry composer update --no-scripts --prefer-lowest -n; fi;
-  - if [ "$dependencies" = "highest" ]; then travis_retry composer update --no-scripts -n; fi;
+  - if [ -z "$dependencies" ]; then travis_retry composer install -n; fi;
+  - if [ "$dependencies" = "lowest" ]; then travis_retry composer update --prefer-lowest -n; fi;
+  - if [ "$dependencies" = "highest" ]; then travis_retry composer update -n; fi;
 
 script:
-  - if [ -z "$cs" ] && [ -z "$require" ]; then phpdbg -qrr vendor/bin/phpunit --coverage-text --coverage-clover build/logs/clover.xml; fi;
+  - if [ "$unit" = 1 ]; then phpdbg -qrr vendor/bin/phpunit --testsuite HarmonIOCacheUnitTestSuite --coverage-text --coverage-clover build/logs/clover.xml; fi;
   - if [ "$cs" = 1 ]; then vendor/bin/phpcs -s; fi;
   - if [ "$require" = 1 ]; then vendor/bin/composer-require-checker check; fi;
 
 after_success:
-  - if [ -z "$cs" ] && [ -z "$require" ]; then travis_retry php php-coveralls.phar; fi;
+  - if [ "$unit" = 1 ]; then travis_retry php php-coveralls.phar; fi;
