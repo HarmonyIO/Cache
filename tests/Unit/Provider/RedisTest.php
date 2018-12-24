@@ -7,6 +7,7 @@ use Amp\Success;
 use HarmonyIO\Cache\Item;
 use HarmonyIO\Cache\Key;
 use HarmonyIO\Cache\Provider\Redis;
+use HarmonyIO\Cache\Ttl;
 use HarmonyIO\PHPUnitExtension\TestCase;
 use PHPUnit\Framework\MockObject\MockObject;
 
@@ -78,7 +79,7 @@ class RedisTest extends TestCase
 
     public function testStore(): void
     {
-        $item = new Item($this->key, 'TheValue', 10);
+        $item = new Item($this->key, 'TheValue', new Ttl(10));
 
         $this->client
             ->expects($this->once())
