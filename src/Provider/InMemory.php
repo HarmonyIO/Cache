@@ -2,21 +2,21 @@
 
 namespace HarmonyIO\Cache\Provider;
 
+use Amp\Cache\ArrayCache;
 use Amp\Promise;
-use Amp\Redis\Client;
 use HarmonyIO\Cache\Cache;
 use HarmonyIO\Cache\Item;
 use HarmonyIO\Cache\Key;
 use function Amp\call;
 
-class Redis implements Cache
+class InMemory implements Cache
 {
-    /** @var Client */
+    /** @var ArrayCache */
     private $client;
 
-    public function __construct(Client $client)
+    public function __construct()
     {
-        $this->client = $client;
+        $this->client = new ArrayCache();
     }
 
     public function get(Key $key): Promise
@@ -26,18 +26,26 @@ class Redis implements Cache
 
     public function exists(Key $key): Promise
     {
-        return $this->client->exists((string) $key);
+        return call(function () use ($key) {
+            $value = yield $this->get($key);
+
+            return $value !== null;
+        });
     }
 
     public function delete(Key $key): Promise
     {
         return call(function () use ($key) {
-            yield $this->client->del((string) $key);
+            yield $this->client->delete((string) $key);
         });
     }
 
     public function store(Item $item): Promise
     {
-        return $this->client->set((string) $item->getKey(), $item->getValue(), $item->getTtl()->getTtlInSeconds());
+        return call(function () use ($item) {
+            yield $this->client->set((string) $item->getKey(), $item->getValue(), $item->getTtl()->getTtlInSeconds());
+
+            return true;
+        });
     }
 }
