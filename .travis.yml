@@ -51,6 +51,25 @@ matrix:
     - name: '[UNIT] PHP Nightly With Lowest Dependencies'
       php: nightly
       env: dependencies=lowest unit=1
+
+    - name: '[INTEGRATION] PHP 7.3 With Locked Dependencies'
+      php: '7.3'
+      env: integration=1
+    - name: '[INTEGRATION] PHP 7.3 With Lowest Dependencies'
+      php: '7.3'
+      env: dependencies=lowest integration=1
+    - name: '[INTEGRATION] PHP 7.3 With Highest Dependencies'
+      php: '7.3'
+      env: dependencies=highest integration=1
+    - name: '[INTEGRATION] PHP Nightly With Locked Dependencies'
+      php: nightly
+      env: integration=1
+    - name: '[INTEGRATION] PHP Nightly With Highest Dependencies'
+      php: nightly
+      env: dependencies=highest integration=1
+    - name: '[INTEGRATION] PHP Nightly With Lowest Dependencies'
+      php: nightly
+      env: dependencies=lowest integration=1
   allow_failures:
     - name: '[CS] PHP Nightly With Locked Dependencies'
       php: nightly
@@ -72,6 +91,19 @@ matrix:
       php: nightly
       env: dependencies=lowest unit=1
 
+    - name: '[INTEGRATION] PHP Nightly With Locked Dependencies'
+      php: nightly
+      env: integration=1
+    - name: '[INTEGRATION] PHP Nightly With Highest Dependencies'
+      php: nightly
+      env: dependencies=highest integration=1
+    - name: '[INTEGRATION] PHP Nightly With Lowest Dependencies'
+      php: nightly
+      env: dependencies=lowest integration=1
+
+services:
+  - redis-server
+
 before_install:
   - phpenv config-rm xdebug.ini || echo "No xdebug config."
   - composer self-update
@@ -87,6 +119,7 @@ before_script:
 
 script:
   - if [ "$unit" = 1 ]; then phpdbg -qrr vendor/bin/phpunit --testsuite HarmonIOCacheUnitTestSuite --coverage-text --coverage-clover build/logs/clover.xml; fi;
+  - if [ "$integration" = 1 ]; then phpdbg -qrr vendor/bin/phpunit --testsuite HarmonIOCacheIntegrationTestSuite --coverage-text --coverage-clover build/logs/clover.xml; fi;
   - if [ "$cs" = 1 ]; then vendor/bin/phpcs -s; fi;
   - if [ "$require" = 1 ]; then vendor/bin/composer-require-checker check; fi;
 

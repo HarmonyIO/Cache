@@ -14,6 +14,9 @@
         <testsuite name="HarmonIOCacheUnitTestSuite">
             <directory>./tests/Unit/</directory>
         </testsuite>
+        <testsuite name="HarmonIOCacheIntegrationTestSuite">
+            <directory>./tests/Integration/</directory>
+        </testsuite>
     </testsuites>
 
     <filter>
@@ -21,4 +24,8 @@
             <directory>./src</directory>
         </whitelist>
     </filter>
+
+    <php>
+        <env name="redisAddress" value="tcp://127.0.0.1:6379"/>
+    </php>
 </phpunit>
