@@ -101,6 +101,9 @@ matrix:
       php: nightly
       env: dependencies=lowest integration=1
 
+services:
+  - redis-server
+
 before_install:
   - phpenv config-rm xdebug.ini || echo "No xdebug config."
   - composer self-update
