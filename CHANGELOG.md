@@ -30,29 +30,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Security
 
 *None*
-
-## [1.0.0-rc1] - 2018-12-24
-
-### Added
-
-*None*
-
-### Changed
-
-*None*
-
-### Deprecated
-
-*None*
-
-### Removed
-
-*None*
-
-### Fixed
-
-*None*
-
-### Security
-
-*None*
