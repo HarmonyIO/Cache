@@ -86,4 +86,11 @@ class InMemoryTest extends TestCase
 
         $this->assertTrue($cache->exists($this->key));
     }
+
+    public function testStoreReturnsTrue(): void
+    {
+        $cache = new InMemory();
+
+        $this->assertTrue($cache->store(new Item($this->key, 'TheValue', new Ttl(5))));
+    }
 }

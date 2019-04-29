@@ -14,4 +14,12 @@ class InvalidTtlTest extends TestCase
 
         throw new InvalidTtl();
     }
+
+    public function testConstructorSetsCorrectDefaultCode(): void
+    {
+        $this->expectException(InvalidTtl::class);
+        $this->expectExceptionCode(0);
+
+        throw new InvalidTtl();
+    }
 }
