@@ -11,7 +11,7 @@ class KeyTest extends TestCase
     {
         $this->assertSame(
             'HttpRequest',
-            (new Key('HttpRequest', 'Validation::NotPwnedPassword', 'TheHash'))->getType()
+            (new Key('HttpRequest', 'Validation::NotPwnedPassword', 'TheHash'))->getType(),
         );
     }
 
@@ -19,7 +19,7 @@ class KeyTest extends TestCase
     {
         $this->assertSame(
             'Validation::NotPwnedPassword',
-            (new Key('HttpRequest', 'Validation::NotPwnedPassword', 'TheHash'))->getSource()
+            (new Key('HttpRequest', 'Validation::NotPwnedPassword', 'TheHash'))->getSource(),
         );
     }
 
@@ -27,7 +27,7 @@ class KeyTest extends TestCase
     {
         $this->assertSame(
             'TheHash',
-            (new Key('HttpRequest', 'Validation::NotPwnedPassword', 'TheHash'))->getHash()
+            (new Key('HttpRequest', 'Validation::NotPwnedPassword', 'TheHash'))->getHash(),
         );
     }
 
@@ -35,7 +35,7 @@ class KeyTest extends TestCase
     {
         $this->assertSame(
             'HarmonyIO_HttpRequest_Validation::NotPwnedPassword_TheHash',
-            (string) new Key('HttpRequest', 'Validation::NotPwnedPassword', 'TheHash')
+            (string) new Key('HttpRequest', 'Validation::NotPwnedPassword', 'TheHash'),
         );
     }
 }
