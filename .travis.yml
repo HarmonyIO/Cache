@@ -70,6 +70,25 @@ matrix:
     - name: '[INTEGRATION] PHP Nightly With Lowest Dependencies'
       php: nightly
       env: dependencies=lowest integration=1
+
+    - name: '[INFECTION] PHP 7.3 With Locked Dependencies'
+      php: '7.3'
+      env: infection=1
+    - name: '[INFECTION] PHP 7.3 With Lowest Dependencies'
+      php: '7.3'
+      env: infection=1 dependencies=lowest
+    - name: '[INFECTION] PHP 7.3 With Highest Dependencies'
+      php: '7.3'
+      env: infection=1 dependencies=highest
+    - name: '[INFECTION] PHP Nightly With Locked Dependencies'
+      php: nightly
+      env: infection=1
+    - name: '[INFECTION] PHP Nightly With Lowest Dependencies'
+      php: nightly
+      env: infection=1 dependencies=lowest
+    - name: '[INFECTION] PHP Nightly With Highest Dependencies'
+      php: nightly
+      env: infection=1 dependencies=highest
   allow_failures:
     - name: '[CS] PHP Nightly With Locked Dependencies'
       php: nightly
@@ -101,6 +120,15 @@ matrix:
       php: nightly
       env: dependencies=lowest integration=1
 
+    - name: '[INFECTION] PHP Nightly With Locked Dependencies'
+      php: nightly
+      env: infection=1
+    - name: '[INFECTION] PHP Nightly With Lowest Dependencies'
+      php: nightly
+      env: infection=1 dependencies=lowest
+    - name: '[INFECTION] PHP Nightly With Highest Dependencies'
+      php: nightly
+      env: infection=1 dependencies=highest
 services:
   - redis-server
 
@@ -116,12 +144,18 @@ before_script:
   - if [ -z "$dependencies" ]; then travis_retry composer install -n; fi;
   - if [ "$dependencies" = "lowest" ]; then travis_retry composer update --prefer-lowest -n; fi;
   - if [ "$dependencies" = "highest" ]; then travis_retry composer update -n; fi;
+  - wget https://github.com/infection/infection/releases/download/0.12.2/infection.phar
+  - wget https://github.com/infection/infection/releases/download/0.12.2/infection.phar.asc
+  - gpg --keyserver hkps.pool.sks-keyservers.net --recv-keys 493B4AA0
+  - gpg --with-fingerprint --verify infection.phar.asc infection.phar
+  - chmod +x infection.phar
 
 script:
   - if [ "$unit" = 1 ]; then phpdbg -qrr vendor/bin/phpunit --testsuite HarmonIOCacheUnitTestSuite --coverage-text --coverage-clover build/logs/clover.xml; fi;
   - if [ "$integration" = 1 ]; then phpdbg -qrr vendor/bin/phpunit --testsuite HarmonIOCacheIntegrationTestSuite --coverage-text --coverage-clover build/logs/clover.xml; fi;
   - if [ "$cs" = 1 ]; then vendor/bin/phpcs -s; fi;
   - if [ "$require" = 1 ]; then vendor/bin/composer-require-checker check; fi;
+  - if [ "$infection" = 1 ]; then phpdbg -qrr ./infection.phar --min-msi=100 --min-covered-msi=100 --threads=4 --show-mutations; fi;
 
 after_success:
   - if [ "$unit" = 1 ]; then travis_retry php php-coveralls.phar; fi;
