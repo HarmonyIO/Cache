@@ -13,6 +13,14 @@ class TtlTest extends TestCase
         $this->expectException(InvalidTtl::class);
         $this->expectExceptionMessage('TTL can not be in the past.');
 
+        new Ttl(-1);
+    }
+
+    public function testConstructorThrowsWhenTtlIsMoreNegative(): void
+    {
+        $this->expectException(InvalidTtl::class);
+        $this->expectExceptionMessage('TTL can not be in the past.');
+
         new Ttl(-3);
     }
 
