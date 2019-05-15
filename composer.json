@@ -16,7 +16,7 @@
         "amphp/amp": "^2.1.1",
         "amphp/cache": "^1.2.0",
         "amphp/redis": "^0.3.3",
-        "amphp/uri": "v0.1.3"
+        "amphp/uri": "v0.1.4"
     },
     "require-dev": {
         "harmonyio/php-codesniffer-ruleset": "dev-master",
