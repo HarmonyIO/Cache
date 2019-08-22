@@ -84,16 +84,16 @@
         },
         {
             "name": "amphp/byte-stream",
-            "version": "v1.5.1",
+            "version": "v1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/byte-stream.git",
-                "reference": "6bbfcb6f47e92577e739586ba0c87e867be70a23"
+                "reference": "47908f8e8bb2da8af4e59028200758477bc927ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/byte-stream/zipball/6bbfcb6f47e92577e739586ba0c87e867be70a23",
-                "reference": "6bbfcb6f47e92577e739586ba0c87e867be70a23",
+                "url": "https://api.github.com/repos/amphp/byte-stream/zipball/47908f8e8bb2da8af4e59028200758477bc927ea",
+                "reference": "47908f8e8bb2da8af4e59028200758477bc927ea",
                 "shasum": ""
             },
             "require": {
@@ -121,12 +121,12 @@
             ],
             "authors": [
                 {
-                    "name": "Niklas Keller",
-                    "email": "me@kelunik.com"
-                },
-                {
                     "name": "Aaron Piotrowski",
                     "email": "aaron@trowski.com"
+                },
+                {
+                    "name": "Niklas Keller",
+                    "email": "me@kelunik.com"
                 }
             ],
             "description": "A stream abstraction to make working with non-blocking I/O simple.",
@@ -139,7 +139,7 @@
                 "non-blocking",
                 "stream"
             ],
-            "time": "2018-12-27T18:08:06+00:00"
+            "time": "2019-07-26T21:22:49+00:00"
         },
         {
             "name": "amphp/cache",
@@ -189,16 +189,16 @@
         },
         {
             "name": "amphp/dns",
-            "version": "v0.9.14",
+            "version": "v0.9.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/dns.git",
-                "reference": "1ccd6337f72107ba422ae72a5812687739d214c8"
+                "reference": "2a3e7376f42b289230c0921aceaec5bbf253299d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/dns/zipball/1ccd6337f72107ba422ae72a5812687739d214c8",
-                "reference": "1ccd6337f72107ba422ae72a5812687739d214c8",
+                "url": "https://api.github.com/repos/amphp/dns/zipball/2a3e7376f42b289230c0921aceaec5bbf253299d",
+                "reference": "2a3e7376f42b289230c0921aceaec5bbf253299d",
                 "shasum": ""
             },
             "require": {
@@ -261,7 +261,7 @@
                 "dns",
                 "resolve"
             ],
-            "time": "2019-01-25T04:12:31+00:00"
+            "time": "2019-07-08T20:58:50+00:00"
         },
         {
             "name": "amphp/parser",
@@ -371,16 +371,16 @@
         },
         {
             "name": "amphp/redis",
-            "version": "v0.3.3",
+            "version": "v0.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/redis.git",
-                "reference": "bf4155dd431c9a37631ac3597b71567ed4a41fa2"
+                "reference": "5f62ce215c257c35adaec80f32ccd6da4da9927f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/redis/zipball/bf4155dd431c9a37631ac3597b71567ed4a41fa2",
-                "reference": "bf4155dd431c9a37631ac3597b71567ed4a41fa2",
+                "url": "https://api.github.com/repos/amphp/redis/zipball/5f62ce215c257c35adaec80f32ccd6da4da9927f",
+                "reference": "5f62ce215c257c35adaec80f32ccd6da4da9927f",
                 "shasum": ""
             },
             "require": {
@@ -390,8 +390,8 @@
                 "php": ">=7.0"
             },
             "require-dev": {
+                "amphp/php-cs-fixer-config": "dev-master",
                 "amphp/phpunit-util": "^1",
-                "friendsofphp/php-cs-fixer": "^2.3",
                 "phpunit/phpunit": "^6"
             },
             "type": "library",
@@ -419,20 +419,20 @@
                 "client",
                 "redis"
             ],
-            "time": "2017-11-17T14:09:59+00:00"
+            "time": "2019-06-05T21:46:12+00:00"
         },
         {
             "name": "amphp/socket",
-            "version": "v0.10.11",
+            "version": "v0.10.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/socket.git",
-                "reference": "2cb9d0ef823cfd1de4cfbd0e680c58841367f727"
+                "reference": "e90cda8929462bc563351bf82753ff48d9796ddc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/socket/zipball/2cb9d0ef823cfd1de4cfbd0e680c58841367f727",
-                "reference": "2cb9d0ef823cfd1de4cfbd0e680c58841367f727",
+                "url": "https://api.github.com/repos/amphp/socket/zipball/e90cda8929462bc563351bf82753ff48d9796ddc",
+                "reference": "e90cda8929462bc563351bf82753ff48d9796ddc",
                 "shasum": ""
             },
             "require": {
@@ -486,7 +486,7 @@
                 "tcp",
                 "tls"
             ],
-            "time": "2018-10-17T16:53:02+00:00"
+            "time": "2019-03-26T04:17:14+00:00"
         },
         {
             "name": "amphp/uri",
@@ -677,12 +677,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/HarmonyIO/PHP-CodeSniffer-Ruleset.git",
-                "reference": "fc25a1e86dbda2284fc3e759dedd6febda89d9cd"
+                "reference": "a3a259de10a1dccf09c1143e2bc80aa574afe4b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/HarmonyIO/PHP-CodeSniffer-Ruleset/zipball/fc25a1e86dbda2284fc3e759dedd6febda89d9cd",
-                "reference": "fc25a1e86dbda2284fc3e759dedd6febda89d9cd",
+                "url": "https://api.github.com/repos/HarmonyIO/PHP-CodeSniffer-Ruleset/zipball/a3a259de10a1dccf09c1143e2bc80aa574afe4b3",
+                "reference": "a3a259de10a1dccf09c1143e2bc80aa574afe4b3",
                 "shasum": ""
             },
             "require": {
@@ -701,7 +701,7 @@
                 }
             ],
             "description": "HarmonyIO coding standards",
-            "time": "2019-04-29T06:03:58+00:00"
+            "time": "2019-06-12T20:34:25+00:00"
         },
         {
             "name": "harmonyio/phpunit-extension",
@@ -954,18 +954,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpeople.de"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Component for reading phar.io manifest information from a PHP Archive (PHAR)",
@@ -1001,18 +1001,18 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpeople.de"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library for handling version information and constraints",
@@ -1330,8 +1330,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library that provides collection, processing, and rendering functionality for PHP code coverage information.",
@@ -1381,8 +1381,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "FilterIterator implementation that filters files based on a list of suffixes.",
@@ -1423,8 +1423,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Simple template engine.",
@@ -1472,8 +1472,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Utility class for timing",
@@ -1601,8 +1601,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "The PHP Unit Testing framework.",
@@ -2175,8 +2175,8 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
-                    "role": "lead"
+                    "role": "lead",
+                    "email": "sebastian@phpunit.de"
                 }
             ],
             "description": "Library that helps with managing the version number of Git-hosted PHP projects",
@@ -2564,8 +2564,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "arne@blankerts.de"
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
