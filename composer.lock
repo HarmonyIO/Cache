@@ -143,25 +143,25 @@
         },
         {
             "name": "amphp/cache",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/amphp/cache.git",
-                "reference": "ab2339e465d9d383dc748f288d530fd7cd7aadea"
+                "reference": "884c102a84fdda3eac71746878d55312319550f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/amphp/cache/zipball/ab2339e465d9d383dc748f288d530fd7cd7aadea",
-                "reference": "ab2339e465d9d383dc748f288d530fd7cd7aadea",
+                "url": "https://api.github.com/repos/amphp/cache/zipball/884c102a84fdda3eac71746878d55312319550f6",
+                "reference": "884c102a84fdda3eac71746878d55312319550f6",
                 "shasum": ""
             },
             "require": {
                 "amphp/amp": "^2"
             },
             "require-dev": {
+                "amphp/php-cs-fixer-config": "dev-master",
                 "amphp/phpunit-util": "^1",
-                "friendsofphp/php-cs-fixer": "^2.3",
-                "phpunit/phpunit": "^6"
+                "phpunit/phpunit": "^6 | ^7 | ^8"
             },
             "type": "library",
             "autoload": {
@@ -185,7 +185,7 @@
             ],
             "description": "A promise-aware caching API for Amp.",
             "homepage": "https://github.com/amphp/cache",
-            "time": "2017-10-04T19:22:12+00:00"
+            "time": "2019-09-21T08:52:12+00:00"
         },
         {
             "name": "amphp/dns",
@@ -677,12 +677,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/HarmonyIO/PHP-CodeSniffer-Ruleset.git",
-                "reference": "fc25a1e86dbda2284fc3e759dedd6febda89d9cd"
+                "reference": "a3a259de10a1dccf09c1143e2bc80aa574afe4b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/HarmonyIO/PHP-CodeSniffer-Ruleset/zipball/fc25a1e86dbda2284fc3e759dedd6febda89d9cd",
-                "reference": "fc25a1e86dbda2284fc3e759dedd6febda89d9cd",
+                "url": "https://api.github.com/repos/HarmonyIO/PHP-CodeSniffer-Ruleset/zipball/a3a259de10a1dccf09c1143e2bc80aa574afe4b3",
+                "reference": "a3a259de10a1dccf09c1143e2bc80aa574afe4b3",
                 "shasum": ""
             },
             "require": {
@@ -701,7 +701,7 @@
                 }
             ],
             "description": "HarmonyIO coding standards",
-            "time": "2019-04-29T06:03:58+00:00"
+            "time": "2019-06-12T20:34:25+00:00"
         },
         {
             "name": "harmonyio/phpunit-extension",
