@@ -677,12 +677,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/HarmonyIO/PHP-CodeSniffer-Ruleset.git",
-                "reference": "fc25a1e86dbda2284fc3e759dedd6febda89d9cd"
+                "reference": "a3a259de10a1dccf09c1143e2bc80aa574afe4b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/HarmonyIO/PHP-CodeSniffer-Ruleset/zipball/fc25a1e86dbda2284fc3e759dedd6febda89d9cd",
-                "reference": "fc25a1e86dbda2284fc3e759dedd6febda89d9cd",
+                "url": "https://api.github.com/repos/HarmonyIO/PHP-CodeSniffer-Ruleset/zipball/a3a259de10a1dccf09c1143e2bc80aa574afe4b3",
+                "reference": "a3a259de10a1dccf09c1143e2bc80aa574afe4b3",
                 "shasum": ""
             },
             "require": {
@@ -701,7 +701,7 @@
                 }
             ],
             "description": "HarmonyIO coding standards",
-            "time": "2019-04-29T06:03:58+00:00"
+            "time": "2019-06-12T20:34:25+00:00"
         },
         {
             "name": "harmonyio/phpunit-extension",
@@ -2225,16 +2225,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.4.2",
+            "version": "3.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8"
+                "reference": "557a1fc7ac702c66b0bbfe16ab3d55839ef724cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8",
-                "reference": "b8a7362af1cc1aadb5bd36c3defc4dda2cf5f0a8",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/557a1fc7ac702c66b0bbfe16ab3d55839ef724cb",
+                "reference": "557a1fc7ac702c66b0bbfe16ab3d55839ef724cb",
                 "shasum": ""
             },
             "require": {
@@ -2272,7 +2272,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-04-10T23:49:02+00:00"
+            "time": "2019-12-04T04:46:47+00:00"
         },
         {
             "name": "symfony/console",
