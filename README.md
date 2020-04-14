@@ -10,7 +10,7 @@ Async caching library
 
 ## Requirements
 
-- PHP 7.3
+- PHP 7.3+
 - Redis (if wanting to use the Redis caching provider)
 
 In addition for non-blocking context one of the following event libraries should be installed:
